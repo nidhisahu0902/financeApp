@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nidhisahu0902": {
+      "hosting": {
+        "financeapp": [
+          "nidhisahu0902"
+        ]
+      }
+    }
+  }
+}

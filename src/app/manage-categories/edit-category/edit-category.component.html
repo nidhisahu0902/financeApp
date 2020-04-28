@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div style="border-radius:5px; box-shadow: 0px 0px 5px 10px rgba(0,0,0,0.6);" class="card text-center my-5">
+                <div style="background-color:rgb(197, 226, 208);"class="card-header">
+                    <strong style="font-size:25px;">Edit Category</strong><i style="float:right; font-size:25px;" class="fa fa-window-close" aria-hidden="true"></i> 
+                </div>
+                <div style="background-color: rgb(123, 95, 160);"class="card-body">
+                    <i style="float:left; font-size:25px;" class="fa fa-pencil-square-o" ></i><input type="text" style="width:80%;"Placeholder="Enter-Category" [(ngModel)]="category.name"><br>
+                    <p>{{category.name}}</p>
+                    <br>
+                  <a (click)="editCategory()"  style="width:50%; margin-top:10px;"class="btn btn-dark">Save Category</a>
+                </div>
+               
+              </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

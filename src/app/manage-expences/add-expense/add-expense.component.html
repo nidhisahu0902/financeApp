@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6">
+            <div style="border-radius:5px; box-shadow: 0px 0px 5px 10px rgba(0,0,0,0.6);" class="card text-center my-5">
+                <div style="background-color:rgba(248, 239, 239, 0.89);"class="card-header">
+                    <strong style="font-size:25px;">Add Expenses</strong><i style="float:right; font-size:25px;" class="fa fa-window-close" aria-hidden="true"></i> 
+                </div>
+                <div style="background-color: rgb(141, 153, 129);"class="card-body">
+                
+                        
+                            <h5 style="display:inline float:left;">category</h5>
+                          <select style="width:70%;" [(ngModel)]="expense.category">
+                              <option *ngFor="let category of categories;let i=index" value="{{category.name}}">{{category.name}}</option>
+                           
+                          </select>
+                        <br><br>  
+                          
+                      
+                    <i style="float:left; font-size:25px;" class="fa fa-cart-plus" aria-hidden="true"></i>
+                    <input type="text" style="width:80%;"Placeholder="Select Expense" [(ngModel)]="expense.name"><br>
+                    <p>{{expense.name}}</p>
+                    <br>
+                    <i style="float:left; font-size:25px;" class="fa fa-calendar-o" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Spend Amount" [(ngModel)]="expense.amount"><br>
+                    <p>{{expense.amount}}</p>
+                    <br>
+                    <i style="float:left; font-size:25px;" class="fa fa-inr" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Date" [(ngModel)]="expense.date"><br>
+                    <p>{{expense.date}}</p>
+                    <br>
+                  <a (click)="addEx()" style="width:50%; margin-top:10px;"class="btn btn-info">Add</a>
+                </div>
+               
+              </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</div>

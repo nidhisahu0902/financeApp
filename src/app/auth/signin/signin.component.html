@@ -1,0 +1,19 @@
+
+    
+    <div class="sign-in-form" >
+        <img src="assets/images/signin.jpg" alt="no image">
+        <h3>Just Sign In</h3>
+        <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
+           
+            <input type="email" class="input-box" placeholder="Your Email" name="username" ngModel>
+            <input type="password" class="input-box" placeholder="Your Password" name="userpassword" ngModel>
+           
+
+            <button type="submit" class="signin-btn">Sign In</button>
+            <a href="/auth/resetpassword" style="float:left;">Forgot Password ?</a><br>
+            <a routerLink="/auth/signup" style="float:left;">Dont Have An Account ?</a>
+            
+        </form>
+    </div>
+
+

@@ -1,0 +1,53 @@
+<div  class="container">
+    <div  class="row my-5">
+        <div class="col-lg-3"></div>
+        <div class="col-lg-6 col-md-12 col-12">
+                
+<table style="margin-top:20px;"class="table table-striped table-dark table-responsive-sm">
+    <thead>
+      <tr>
+        <th scope="col">Sr.no</th>
+        <th scope="col">Cat-name</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Edit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let category of items; let i=index">
+  
+        <td>{{i+1}}</td>
+        <td>{{category.name}}</td>
+        <td><button (click)="del(i)" class="btn btn-danger">Delete</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category/{{i}}" class="btn btn-primary">Edit</button></td>
+      </tr>
+       <!-- <th scope="row">1</th>
+        <td>Food</td>
+        <td><button type="submit" class="btn btn-danger">delete</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category" class="btn btn-primary">Edit</button></td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Vehicle</td>
+        <td><button class="btn btn-danger">Delete</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category"class="btn btn-primary">Edit</button></td>
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>Games</td>
+        <td><button class="btn btn-danger">Delete</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category" class="btn btn-primary">Edit</button></td>
+      </tr>
+    -->
+      <tr class="text-center">
+
+        
+        <td colspan="4"><button routerLink="/home/manage-categories/add-category" class="btn btn-secondary">Add-category</button></td>
+        
+      </tr>
+    </tbody>
+  </table>
+  
+        </div>
+        <div class="col-lg-3"></div>
+    </div>
+</div>
