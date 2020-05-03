@@ -23,7 +23,9 @@ import { AddExpenseComponent } from './manage-expences/add-expense/add-expense.c
 import { EditExpenseComponent } from './manage-expences/edit-expense/edit-expense.component';
 import { AllExpenseComponent } from './manage-expences/all-expense/all-expense.component';
 import { NavbarhomeComponent } from './navbarhome/navbarhome.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
 
 
 
@@ -53,7 +55,9 @@ import { NavbarhomeComponent } from './navbarhome/navbarhome.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],
   bootstrap: [AppComponent]

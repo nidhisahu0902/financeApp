@@ -21,7 +21,7 @@ export class AddCategoryComponent implements OnInit {
       let newCat={name:this.category.name}
       this.CategoryService.addCat(newCat)
       this.category.name=""
-      this.router.navigateByUrl("home/manage-categories")
+      this.router.navigateByUrl("/home/manage-categories")
   }
 
 }

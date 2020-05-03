@@ -18,12 +18,7 @@ import { EditExpenseComponent } from './manage-expences/edit-expense/edit-expens
 
 
 const routes: Routes = [
-  
-  {path:'auth' , component: AuthComponent,children : [
-    {path:'' ,component:SigninComponent},
-    {path:'signup' ,component:SignupComponent},
-    {path:'reset-password' ,component:ResetPasswordComponent}
-  ]},
+
   {path:'home', component: HomeComponent ,children : [
     {path:'',component: DashboardComponent},
     {path:'manage-categories',component: ManageCategoriesComponent, children: [
@@ -32,6 +27,13 @@ const routes: Routes = [
       {path:'edit-category/:id',component:EditCategoryComponent}
 
     ]},
+
+  {path:'auth' , component: AuthComponent,children : [
+    {path:'' ,component:SigninComponent},
+    {path:'signup' ,component:SignupComponent},
+    {path:'reset-password' ,component:ResetPasswordComponent}
+  ]},
+
     {path:'manage-expenses',component: ManageExpencesComponent, children: [
       {path:'',component:AllExpenseComponent},
       {path:'add-expense',component:AddExpenseComponent},

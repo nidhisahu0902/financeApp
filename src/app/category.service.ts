@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -6,32 +8,41 @@ import { Injectable } from '@angular/core';
 export class CategoryService {
 
   categories=[]
-  constructor() {
-    this.categories.push({name:"nidhi"})
+  constructor(public db:AngularFirestore) {
+    //this.categories.push({name:"nidhi"})
    }
 
   addCat(category)
   {
     
-    this.categories.push(category)
-    
+//    this.categories.push(category)
+  this.db.collection("categories").add(category)  
 
   }
 
  delCategory(index)
   {
-      this.categories.splice(index,1)
+      //this.categories.splice(index,1)
+      this.db.collection("categories").doc(index).delete()
    }
- editCat(index,upCategory)
+ editCat(i,upCategory)
    {
-     this.categories[index]=upCategory 
+     //this.categories[index]=upCategory
+     this.db.collection("categories").doc(i).update(upCategory) 
    }
    getCategory()
    {
-     return this.categories
-
+    // return this.categories
+    return this.db.collection("categories").snapshotChanges().pipe(
+      map(actions => actions.map(a =>{
+        const data = a.payload.doc.data() as any;
+        const id = a.payload.doc.id;
+        return { id, ...data };
+      }))
+    );
    }
-   getcat(index){
-     return this.categories[index]
+   getcat(id){
+     //return this.categories[index]
+     return this.db.collection("categories").doc(id).valueChanges()
    }
  }

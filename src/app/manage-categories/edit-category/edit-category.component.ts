@@ -9,13 +9,16 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class EditCategoryComponent implements OnInit {
   index
-  category:{name:string}={name:""}
+  category:any=null
   constructor(public CategoryService:CategoryService,public router:Router,public route:ActivatedRoute) { }
 
   ngOnInit() {
     this.index=this.route.snapshot.paramMap.get("id")
     console.log(this.index)
-    this.category=this.CategoryService.getcat(this.index)
+  //  this.category=this.CategoryService.getcat(this.index)
+  this.CategoryService.getcat(this.index).subscribe(result=>{
+    this.category=result
+  })
   }
 
   editCategory(){

@@ -11,8 +11,12 @@ export class AllExpenseComponent implements OnInit {
   constructor(public ExpenseService:ExpenseService) { }
 
   ngOnInit() {
-    this.items=this.ExpenseService.getExpense()
-    console.log(this.items)
+   // this.items=this.ExpenseService.getExpense()
+    this.ExpenseService.getExpense().subscribe(res1=>{
+      this.items=res1
+      console.log(res1)
+    })
+    
   }
   del(i)
   {

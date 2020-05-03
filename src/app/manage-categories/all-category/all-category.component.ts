@@ -8,14 +8,19 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class AllCategoryComponent implements OnInit {
   items=[]
+  
   constructor(public categoryService:CategoryService) { }
 
   ngOnInit() {
-    this.items=this.categoryService.getCategory()
-    console.log(this.items)
+//    this.items=this.categoryService.getCategory()
+    this.categoryService.getCategory().subscribe(res=>{
+      this.items=res
+      console.log(res)
+    })
+    
   }
-  del(i){
-    this.categoryService.delCategory(i)
+  del(id){
+    this.categoryService.delCategory(id)
   }
 
 }

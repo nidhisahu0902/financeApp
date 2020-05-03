@@ -13,12 +13,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let category of items; let i=index">
+      <tr *ngFor="let category of items; let i=index;">
   
         <td>{{i+1}}</td>
         <td>{{category.name}}</td>
-        <td><button (click)="del(i)" class="btn btn-danger">Delete</button></td>
-        <td><button routerLink="/home/manage-categories/edit-category/{{i}}" class="btn btn-primary">Edit</button></td>
+        <td><button (click)="del(category.id)" class="btn btn-danger">Delete</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category/{{category.id}}" class="btn btn-primary">Edit</button></td>
       </tr>
        <!-- <th scope="row">1</th>
         <td>Food</td>

@@ -19,10 +19,10 @@
                     <i style="float:left; font-size:25px;" class="fa fa-cart-plus" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Select Expense"  [(ngModel)]="expense.name"><br>
                     <p>{{expense.name}}</p>
                     <br>
-                    <i style="float:left; font-size:25px;" class="fa fa-calendar-o" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Spend Amount"  [(ngModel)]="expense.amount"><br>
+                    <i style="float:left; font-size:25px;" class="fa fa-inr" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Spend Amount"  [(ngModel)]="expense.amount"><br>
                     <p>{{expense.amount}}</p>
                     <br>
-                    <i style="float:left; font-size:25px;" class="fa fa-inr" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Date"  [(ngModel)]="expense.date"><br>
+                    <i style="float:left; font-size:25px;" class="fa fa-calendar-o" aria-hidden="true"></i><input type="text" style="width:80%;"Placeholder="Date"  [(ngModel)]="expense.date"><br>
                     <p>{{expense.date}}</p>
                     <br>
                   <a (click)="EditExpense()" style="width:50%; margin-top:10px;"class="btn btn-dark">Save Expense</a>

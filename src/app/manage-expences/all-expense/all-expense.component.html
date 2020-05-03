@@ -23,8 +23,8 @@
         <td>{{expense.name}}</td>
         <td>{{expense.amount}}</td>
         <td>{{expense.date}}</td>
-        <td><button (click)="del(i)" class="btn btn-danger">Delete</button></td>
-        <td><button routerLink="/home/manage-expenses/edit-expense/{{i}}" class="btn btn-primary">Edit</button></td>
+        <td><button (click)="del(expense.id)" class="btn btn-danger">Delete</button></td>
+        <td><button routerLink="/home/manage-expenses/edit-expense/{{expense.id}}" class="btn btn-primary">Edit</button></td>
       </tr>
       <tr class="text-center">
 

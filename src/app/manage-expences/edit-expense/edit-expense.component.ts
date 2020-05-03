@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ExpenseService } from 'src/app/expense.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { CategoryService } from 'src/app/category.service';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-edit-expense',
@@ -10,14 +11,19 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class EditExpenseComponent implements OnInit {
   index
-  categories=[]
-  constructor(public ExpenseService:ExpenseService,public CategoryService:CategoryService, public router:Router,public route:ActivatedRoute) { }
-  expense:{category:string,name:string,amount:string,date:string}={category:"",name:"",amount:"",date:""}
+  categories:any=null
+  constructor(public db:AngularFirestore, public ExpenseService:ExpenseService,public CategoryService:CategoryService, public router:Router,public route:ActivatedRoute) { }
+  expense:any=null
   ngOnInit() {
     this.index=this.route.snapshot.paramMap.get("id1")
     console.log(this.index)
-    this.expense=this.ExpenseService.getex(this.index)
-    this.categories=this.CategoryService.getCategory()
+    //this.expense=this.ExpenseService.getex(this.index)
+    this.ExpenseService.getex(this.index).subscribe(result1=>{
+      this.expense=result1
+    })
+    this.CategoryService.getCategory().subscribe(res1=>{
+      this.categories=res1
+   })
   }
 
   EditExpense(){
