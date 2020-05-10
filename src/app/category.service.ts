@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { map } from 'rxjs/operators';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root'
@@ -8,16 +9,17 @@ import { map } from 'rxjs/operators';
 export class CategoryService {
 
   categories=[]
-  constructor(public db:AngularFirestore) {
+  constructor(public db:AngularFirestore,public authser:AuthService) {
     //this.categories.push({name:"nidhi"})
    }
 
   addCat(category)
   {
-    
+      
 //    this.categories.push(category)
-  this.db.collection("categories").add(category)  
-
+    let newMember = {name:category.name,uid:this.authser.getuid()}
+    this.db.collection("categories").add(newMember)  
+    console.log(newMember)
   }
 
  delCategory(index)
@@ -33,7 +35,7 @@ export class CategoryService {
    getCategory()
    {
     // return this.categories
-    return this.db.collection("categories").snapshotChanges().pipe(
+    return this.db.collection("categories",ref=>ref.where("uid","==",this.authser.getuid())).snapshotChanges().pipe(
       map(actions => actions.map(a =>{
         const data = a.payload.doc.data() as any;
         const id = a.payload.doc.id;

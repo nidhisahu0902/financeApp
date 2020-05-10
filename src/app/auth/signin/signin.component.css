@@ -10,10 +10,10 @@ body
 {
     width:300px;
 
-    box-shadow: 15px 15px 15px 15px rgba(38, 141, 201, 0.2);
-    background: rgb(144, 172, 144);
-    border-radius: 10px;
-    height:380px;
+    box-shadow: 15px 15px 15px 0px rgba(9, 158, 245, 0.6);
+    background: rgb(11, 12, 11);
+    border-radius: 0px;
+    height:450px;
     padding:10px;
     margin: 8% auto 0;
     text-align:center;
@@ -21,8 +21,12 @@ body
 }
 .sign-up-form h3
 {
-    color: #1c8adb;
+    color: #cad5dd!important;
     margin-bottom: 30px;
+}
+h3{
+    color:#fff;
+    margin-top:20px;
 }
 .input-box
 {
@@ -36,6 +40,12 @@ body
     padding: 10px;
    
 }
+/*input .ng-valid .ng-touched
+{
+    border-bottom:1px solid red!important;
+    box-shadow: 0 0 13px inset rgb(231, 8, 8,0.2);
+    border-radius: 30px;
+}*/
 p
 {
     font-size:15px;
@@ -47,7 +57,7 @@ button
     width: 90%;
     padding-top: 30px;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 8px;
     font-size:15px;
     margin:10px 0;
     outline:none;
@@ -77,8 +87,9 @@ a
 {
     font-size:15px;
     color:white!important;
-    margin-top:10px;
+    margin-top:5px;
     margin-left: 20px;
     padding-top:10px;
     font-weight: bold;
+    margin-bottom: 0px;
 }

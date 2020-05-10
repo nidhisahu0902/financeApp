@@ -3,6 +3,7 @@ import { ExpenseService } from 'src/app/expense.service';
 import { Router } from '@angular/router';
 import { CategoryService } from 'src/app/category.service';
 import { AngularFirestore } from '@angular/fire/firestore';
+import { AuthService } from 'src/app/auth.service';
 
 
 @Component({
@@ -12,19 +13,20 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class AddExpenseComponent implements OnInit {
   expense:{category:string,name:string,amount:string,date:string}={category:"",name:"",amount:"",date:""}
-  categories:any=null
-  constructor(public db:AngularFirestore ,public ExpenseService:ExpenseService,public CategoryServise:CategoryService, public route:Router) { }
+  categories:any
+  constructor(public db:AngularFirestore ,public ExpenseService:ExpenseService,public CategoryServise:CategoryService, public route:Router,public auth:AuthService) 
+  { }
 
   ngOnInit() {
     
     this.categories=this.CategoryServise.getCategory().subscribe(res1=>{
       this.categories=res1
     })
-  
+
   }
 
   addEx(){
-      let newEx={category:this.expense.category,name:this.expense.name,amount:this.expense.amount,date:this.expense.date}
+      let newEx={category:this.expense.category,name:this.expense.name,amount:this.expense.amount,date:this.expense.date,uid:this.auth.getuid()}
       this.ExpenseService.addExpense(newEx)
       console.log(newEx)
       this.expense.name=""

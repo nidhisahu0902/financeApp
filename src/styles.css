@@ -3,7 +3,8 @@ body
 {
     background-image: Url(assets/images/bg5.jpg) ;
     background-size: cover;
-    background-repeat: no-repeat;
-    height:80vh;
+    background-repeat: y-repeat;
+    height:100%;
+    
   
 }

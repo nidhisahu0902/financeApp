@@ -5,11 +5,14 @@
         <h3>Just Sign In</h3>
         <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
            
-            <input type="email" class="input-box" placeholder="Your Email" name="username" ngModel>
-            <input type="password" class="input-box" placeholder="Your Password" name="userpassword" ngModel>
+            <input type="email" class="input-box" placeholder="Your Email" name="username" [(ngModel)]="email">
+            <input type="password" class="input-box" placeholder="Your Password" name="userpassword" 
+            [(ngModel)]="password">
            
 
-            <button type="submit" class="signin-btn">Sign In</button>
+            <button type="submit" class="signin-btn" [disabled]="!userdata.valid" >Sign In</button>
+            
+            <button (click)="googlesigniin()" class="signin-btn" [disabled]="!userdata.valid" >Sign In With Goggle</button>
             <a routerLink="/auth/reset-password" style="float:left;">Forgot Password ?</a><br>
             <a routerLink="/auth/signup" style="float:left;">Dont Have An Account ?</a>
             

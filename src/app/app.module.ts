@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 
+import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthComponent } from './auth/auth.component';
@@ -26,7 +27,8 @@ import { NavbarhomeComponent } from './navbarhome/navbarhome.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
-
+import {NgxPaginationModule} from 'ngx-pagination';
+import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponent.component';
 
 
 @NgModule({
@@ -50,6 +52,7 @@ import { environment } from '../environments/environment';
     EditExpenseComponent,
     AllExpenseComponent,
     NavbarhomeComponent,
+    NotfoundcomponentComponent,
 
   ],
   imports: [
@@ -57,6 +60,8 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     FormsModule,
     AngularFirestoreModule,
+    NgxPaginationModule,
+    AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
   providers: [],

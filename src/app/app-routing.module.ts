@@ -15,11 +15,14 @@ import { AllCategoryComponent } from './manage-categories/all-category/all-categ
 import { AllExpenseComponent } from './manage-expences/all-expense/all-expense.component';
 import { AddExpenseComponent } from './manage-expences/add-expense/add-expense.component';
 import { EditExpenseComponent } from './manage-expences/edit-expense/edit-expense.component';
+import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponent.component';
+import { AuthGuardService } from './auth-guard.service';
 
 
 const routes: Routes = [
 
-  {path:'home', component: HomeComponent ,children : [
+ // {path:'', redirectTo:'home',pathMatch:'full'},
+  {path:'home', component: HomeComponent , canActivate:[AuthGuardService], children : [
     {path:'',component: DashboardComponent},
     {path:'manage-categories',component: ManageCategoriesComponent, children: [
       {path:'',component:AllCategoryComponent},
@@ -27,13 +30,6 @@ const routes: Routes = [
       {path:'edit-category/:id',component:EditCategoryComponent}
 
     ]},
-
-  {path:'auth' , component: AuthComponent,children : [
-    {path:'' ,component:SigninComponent},
-    {path:'signup' ,component:SignupComponent},
-    {path:'reset-password' ,component:ResetPasswordComponent}
-  ]},
-
     {path:'manage-expenses',component: ManageExpencesComponent, children: [
       {path:'',component:AllExpenseComponent},
       {path:'add-expense',component:AddExpenseComponent},
@@ -42,8 +38,13 @@ const routes: Routes = [
     {path:'expense-summary',component: ExpenceSummaryComponent},
 
   ]},
- 
+  {path:'auth' , component: AuthComponent, children : [
+    {path:'' ,component:SigninComponent},
+    {path:'signup' ,component:SignupComponent},
+    {path:'reset-password' ,component:ResetPasswordComponent}
+  ]},
   
+  {path:'**',component:NotfoundcomponentComponent}
 ];
 
 @NgModule({

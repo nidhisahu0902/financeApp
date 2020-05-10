@@ -10,11 +10,11 @@ body
 {
     width:300px;
 
-    box-shadow: 2px 5px 2px 4px rgba(242, 242, 245, 0.363);
-    background: rgb(150, 150, 199);
+    box-shadow: 2px 5px 2px 4px rgba(6, 6, 8, 0.363);
+    background: rgb(2, 2, 8);
     margin-bottom: 50px;
     margin-top: 10px;
-    border-radius: 10px;
+    border-radius: 0px;
     padding:10px;
     margin: 8% auto 0;
     text-align:center;
@@ -29,7 +29,7 @@ body
 {
     border:none;
     outline:none;
-    border-bottom: 1px solid!important;
+    border-bottom: 1px solid #fff!important;
     background: none;
     padding: 10px;
     outline:none;
@@ -45,7 +45,7 @@ button
     color:#fff;
     width: 100%;
     padding: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
     font-size:15px;
     margin:10px 0;
     outline:none;
@@ -70,4 +70,7 @@ img
     border-radius: 50%;
     margin-top:-40px;
     border: solid lightgray;
+}
+p {
+    color:whitesmoke;
 }
