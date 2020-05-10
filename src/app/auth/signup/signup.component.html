@@ -1,17 +1,34 @@
-
     
-    <div class="sign-up-form">
+    
+    <div class="sign-up-form" style="height:450px;">
         <img src="assets/images/usericon.jpg" alt="no image">
       <strong> <h3>Sign Up Now</h3></strong>
         <form action="" method="" #userdata1="ngForm" (ngSubmit)="onSubmit1(userdata1)">
-            <input type="text" class="input-box" placeholder="Your Name" name="uname" [(ngModel)]="uname">
-            <input type="email" class="input-box" placeholder="Your Email" name="email" [(ngModel)]="email">
-            <input type="password" class="input-box" placeholder="Your Password" name="password" [(ngModel)]="password">
-            <input type="text" class="input-box" placeholder="Your Number" name="number" [(ngModel)]="number">
-            <p><span><input type="checkbox" ></span > I agree to the terms of services</p>
-
+            <div class="form-group">
+                <input type="text" #nameRef="ngModel" class="form-control" placeholder="Your Name" 
+                name="uname" [(ngModel)]="uname" required>
+                    <div [hidden]="nameRef.valid || nameRef.pristine" class="alert alert-danger ">
+                        Please Enter Your Name
+                    </div>
+                <input type="email" #mailRef="ngModel" class="form-control" placeholder="Your Email"
+                 name="email" [(ngModel)]="email" required>
+                    <div [hidden]="mailRef.valid || mailRef.pristine" class="alert alert-danger ">
+                        Please Enter Email
+                    </div>
+                <input type="password" #passRef="ngModel" class="form-control" placeholder="Your Password" 
+                name="password" [(ngModel)]="password" required>
+                    <div [hidden]="passRef.valid || passRef.pristine" class="alert alert-danger ">
+                        Please Enter Password
+                    </div>
+                <input type="text" #numRef="ngModel" class="form-control" placeholder="Your Number"
+                name="number" [(ngModel)]="number">
+                   <div [hidden]="numRef.valid || numRef.pristine" class="alert alert-danger ">
+                         Please Enter Number
+                   </div>
+                <p><span><input type="checkbox" ></span > I agree to the terms of services</p>
+            </div>        
             <button type="submit" class="signup-btn">Sign Up</button>
+            <a routerLink="/auth" style="float:left;">Already have an Account ?</a><br>
             
         </form>
     </div>
-

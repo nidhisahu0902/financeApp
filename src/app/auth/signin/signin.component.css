@@ -13,7 +13,7 @@ body
     box-shadow: 15px 15px 15px 0px rgba(9, 158, 245, 0.6);
     background: rgb(11, 12, 11);
     border-radius: 0px;
-    height:450px;
+    height:550px;
     padding:10px;
     margin: 8% auto 0;
     text-align:center;
@@ -28,7 +28,7 @@ h3{
     color:#fff;
     margin-top:20px;
 }
-.input-box
+.form-control
 {
     border-bottom:1px solid !important;
     border:none;
@@ -40,12 +40,12 @@ h3{
     padding: 10px;
    
 }
-/*input .ng-valid .ng-touched
+/* input .ng-valid .ng-touched
 {
-    border-bottom:1px solid red!important;
+    border-bottom:1px solid red;
     box-shadow: 0 0 13px inset rgb(231, 8, 8,0.2);
     border-radius: 30px;
-}*/
+} */
 p
 {
     font-size:15px;
@@ -93,3 +93,9 @@ a
     font-weight: bold;
     margin-bottom: 0px;
 }
+/* input .ng-invalid{
+    border-left: 5px solid red;
+}
+input .ng-valid{
+    border-left:5px solid green;
+} */

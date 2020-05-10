@@ -1,9 +1,10 @@
 <div  class="container">
     <div  class="row my-5 ">
-        <div class="col-lg-2"></div>
-        <div class="col-lg-8 col-md-12 col-12">
+        
+        <div class="col-lg-8 col-md-12 col-12 mx-auto">
                 
-<table style="margin-top:20px; box-shadow: 0px 0px 5px 10px rgba(0,0,0,0.6);" class="table table-sm table-striped table-dark table-responsive-sm">
+<table style="margin-top:20px; box-shadow: 0px 0px 5px 10px rgba(0,0,0,0.6);" 
+class="table table-sm table-striped table-dark table-responsive-sm">
     <thead>
       <tr>
         <th scope="col">Sr.no</th>
@@ -24,18 +25,22 @@
         <td>{{expense.amount}}</td>
         <td>{{expense.date}}</td>
         <td><button (click)="del(expense.id)" class="btn btn-danger">Delete</button></td>
-        <td><button routerLink="/home/manage-expenses/edit-expense/{{expense.id}}" class="btn btn-primary">Edit</button></td>
+        <td><button routerLink="/home/manage-expenses/edit-expense/{{expense.id}}" 
+        class="btn btn-primary">Edit</button>
+        </td>
       </tr>
       <tr class="text-center">
 
         
-        <td colspan="7"><button routerLink="/home/manage-expenses/add-expense" class="btn btn-secondary">Add-Expense</button></td>
+        <td colspan="7"><button routerLink="/home/manage-expenses/add-expense" class="btn btn-secondary">
+          Add-Expense</button>
+        </td>
         
       </tr>
     </tbody>
   </table>
   
         </div>
-        <div class="col-lg-2"></div>
+      
     </div>
 </div>

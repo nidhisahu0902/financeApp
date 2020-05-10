@@ -1,22 +1,30 @@
 
     
-    <div class="sign-in-form" >
-        <img src="assets/images/signin.jpg" alt="no image">
-        <h3>Just Sign In</h3>
-        <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
-           
-            <input type="email" class="input-box" placeholder="Your Email" name="username" [(ngModel)]="email">
-            <input type="password" class="input-box" placeholder="Your Password" name="userpassword" 
-            [(ngModel)]="password">
-           
+<div class="sign-in-form">
+    <img src="assets/images/signin.jpg" alt="no image">
+    <h3>Just Sign In</h3>
+    <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
+        <div class="form-group">
+          <input type="email" #emailRef="ngModel" required class="form-control" placeholder="Your Email"
+          name="username" [(ngModel)]="email">
+          <div [hidden]="emailRef.valid || emailRef.pristine" class="alert alert-danger ">
+                    Please enter Email
+          </div>
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+          <input type="password" required class="form-control" placeholder="Your Password" 
+          name="userpassword" [(ngModel)]="password">
+        </div>
 
-            <button type="submit" class="signin-btn" [disabled]="!userdata.valid" >Sign In</button>
+        <button type="submit" class="signin-btn" [disabled]="!userdata.valid" >Sign In</button>
             
-            <button (click)="googlesigniin()" class="signin-btn" [disabled]="!userdata.valid" >Sign In With Goggle</button>
-            <a routerLink="/auth/reset-password" style="float:left;">Forgot Password ?</a><br>
-            <a routerLink="/auth/signup" style="float:left;">Dont Have An Account ?</a>
-            
+        <button (click)="googlesigniin()" class="signin-btn">Sign In With Goggle</button>
+          <a routerLink="/auth/reset-password" style="float:left;">Forgot Password ?</a><br>
+          <a routerLink="/auth/signup" style="float:left;">Dont Have An Account ?</a> 
         </form>
-    </div>
+</div>
+
+
+
+            
 
 

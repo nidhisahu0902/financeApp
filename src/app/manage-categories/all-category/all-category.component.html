@@ -18,13 +18,15 @@
         <td>{{i+1}}</td>
         <td>{{category.name}}</td>
         <td><button (click)="del(category.id)" class="btn btn-danger">Delete</button></td>
-        <td><button routerLink="/home/manage-categories/edit-category/{{category.id}}" class="btn btn-primary">Edit</button></td>
+        <td><button routerLink="/home/manage-categories/edit-category/{{category.id}}" 
+        class="btn btn-primary">Edit</button></td>
       </tr>
     
       <tr class="text-center">
 
         
-        <td colspan="4"><button routerLink="/home/manage-categories/add-category" class="btn btn-secondary">Add-category</button></td>
+        <td colspan="4"><button routerLink="/home/manage-categories/add-category" 
+        class="btn btn-secondary">Add-category</button></td>
         
       </tr>
     </tbody>

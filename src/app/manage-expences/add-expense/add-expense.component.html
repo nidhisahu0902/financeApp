@@ -9,29 +9,26 @@
                     <i style="float:right; font-size:25px;" class="fa fa-window-close" aria-hidden="true"></i> 
                 </div>
                 <div style="background-color: rgb(141, 153, 129);"class="card-body">
-                
-                        
-                            <h5 style="display:inline float:left;">category</h5>
-                          <select style="width:70%;" [(ngModel)]="expense.category">
-                              <option *ngFor="let category of categories;let i=index" value="{{category.name}}">
-                                {{category.name}}</option>
-                           
-                          </select>
-                        <br><br>  
-                          
-                      
+                    <h5 style="display:inline float:left;">category</h5>
+                    <select style="width:70%;" [(ngModel)]="expense.category">
+                        <option *ngFor="let category of categories;let i=index" value="{{category.name}}">
+                                {{category.name}}
+                        </option>
+                    </select>
+                    <br><br>  
                     <i style="float:left; font-size:25px;" class="fa fa-cart-plus" aria-hidden="true"></i>
                     <input type="text" style="width:80%;"Placeholder="Select Expense" 
                     [(ngModel)]="expense.name"><br>
-                    <p>{{expense.name}}</p>
+                      <p>{{expense.name}}</p>
                     <br>
                     <i style="float:left; font-size:25px;" class="fa fa-inr" aria-hidden="true"></i>
-                    <input type="text" style="width:80%;"Placeholder="Spend Amount" [(ngModel)]="expense.amount"><br>
-                    <p>{{expense.amount}}</p>
+                    <input type="text" style="width:80%;"Placeholder="Spend Amount" 
+                    [(ngModel)]="expense.amount"><br>
+                      <p>{{expense.amount}}</p>
                     <br>
                     <i style="float:left; font-size:25px;" class="fa fa-calendar-o" aria-hidden="true"></i>
                     <input type="date" style="width:80%;"Placeholder="Date" [(ngModel)]="expense.date"><br>
-                    <p>{{expense.date}}</p>
+                      <p>{{expense.date}}</p>
                     <br>
                   <a (click)="addEx()" style="width:50%; margin-top:10px;"class="btn btn-info">Add</a>
                 </div>
