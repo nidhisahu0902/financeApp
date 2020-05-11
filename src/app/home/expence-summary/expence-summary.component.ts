@@ -14,11 +14,11 @@ export class ExpenceSummaryComponent implements OnInit {
 categories=[]
 Expense=[]
 sum=0
-value
+
   constructor(public categoryservice:CategoryService,public expenseservice:ExpenseService,public db1:AngularFirestore
     ,public authser:AuthService) {
 
-      this.add(this.Expense)
+      
 
   this.categoryservice.getCategory().subscribe(res=>{
     console.log(res)
@@ -30,12 +30,7 @@ value
     
   }
 
-add(data){
-  this.value=data
-  for(let j=0; j<data.length; j++){
-    this.sum=this.sum+this.value[j].amount
-  }
-}
+
   getExpense(category){
     return this.db1.collection("expenses",ref=>ref.where("uid","==",this.authser.getuid()).where("category","==",category).orderBy("date","desc")).snapshotChanges().pipe(
       map(actions => actions.map(a => {
