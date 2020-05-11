@@ -30,7 +30,7 @@ value
   })
 }
   ngOnInit() {
-
+    
   }
 
 add(data){
@@ -40,7 +40,7 @@ add(data){
   }
 }
   getExpense(){
-    return this.db1.collection("expenses",ref=>ref.where("uid","==",this.authser.getuid())). snapshotChanges().pipe(
+    return this.db1.collection("expenses",ref=>ref.where("uid","==",this.authser.getuid().where("this.categories.category.name","==",this.categoryservice.getCategory()))).snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as any;
         const id = a.payload.doc.id;

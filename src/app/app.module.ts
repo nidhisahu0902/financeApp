@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule} from '@angular/forms';
 
+
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponent.component';
+import { AuthService } from './auth.service';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponen
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

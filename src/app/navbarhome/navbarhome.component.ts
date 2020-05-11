@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { Router } from '@angular/router';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbarhome',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarhomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(public auth:AuthService,public router:Router) { }
 
   ngOnInit() {
+  }
+
+  logout()
+  {  
+    this.auth.logout()
+    this.router.navigateByUrl("/auth")  
+   
   }
 
 }

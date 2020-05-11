@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AppModule } from 'src/app/app.module';
 import { NgForm } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestore } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-reset-password',
@@ -9,7 +11,7 @@ import { NgForm } from '@angular/forms';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  constructor() { }
+  constructor(public db:AngularFirestore) { }
 
   ngOnInit() {
   }
@@ -17,6 +19,7 @@ export class ResetPasswordComponent implements OnInit {
   onReset(formdata: NgForm)
   {
     console.log(formdata.value);
+    this.db    
     formdata.resetForm();
   }
 }

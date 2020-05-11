@@ -21,17 +21,24 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let expense of Expense!let i=index">
+      <tr *ngFor="let expense of Expense | paginate: { itemsPerPage: 5, currentPage: p}; index as i">
         <th scope="row">{{i+1}}</th>
         <td>{{expense.name}}</td>
         <td>{{expense.amount}}</td>
-        <td>{{expense.date}}</td>
+        <td>{{expense.date  | date: 'longDate'}}</td>
       </tr>
      
       <tr>
         <th scope="row"></th>
         <td colspan="2">Total Expense</td>
         <td>{{sum}}</td>
+      </tr>
+
+      <tr >
+        <td colspan="4" class="text-center bg-secondary">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+
+        </td>
       </tr>
     </tbody>
   </table> 

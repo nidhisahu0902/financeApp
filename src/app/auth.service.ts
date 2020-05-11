@@ -34,14 +34,22 @@ signIn(email,password)
   })
 }
 
+SendVerificationMail() {
+  
+  return this.authdb.auth.currentUser.sendEmailVerification()
+  .then(() => {
+    this.router.navigateByUrl('/home');
+  })
+}
+
 signup(email,password)
 {
-  this.authdb.auth.createUserWithEmailAndPassword(email,password).then(res=>{
-    console.log(res.user.uid)
-    this.uid=res.user.uid
-    this.router.navigateByUrl("/home")
-  }).catch(err=>{
-    alert(err)
+
+  return this.authdb.auth.createUserWithEmailAndPassword(email, password)
+  .then((result) => {
+    this.SendVerificationMail();
+  }).catch((error) => {
+    window.alert(error.message)
   })
 }
 loginG() {

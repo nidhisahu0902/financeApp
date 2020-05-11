@@ -28,7 +28,7 @@
                     <br>
                     <i style="float:left; font-size:25px;" class="fa fa-calendar-o" aria-hidden="true"></i>
                     <input type="date" style="width:80%;"Placeholder="Date" [(ngModel)]="expense.date"><br>
-                      <p>{{expense.date}}</p>
+                      <p>{{expense.date | date:'shot'}}</p>
                     <br>
                   <a (click)="addEx()" style="width:50%; margin-top:10px;"class="btn btn-info">Add</a>
                 </div>

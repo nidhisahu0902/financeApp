@@ -4,3 +4,7 @@ img
     height:50px;
     border-radius: 50%;
 }
+.nav-item .btn
+{
+    margin-left:20px;
+}

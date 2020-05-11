@@ -17,13 +17,13 @@ class="table table-sm table-striped table-dark table-responsive-sm">
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let expense of items; let i=index">
+      <tr *ngFor="let expense of items | paginate: { itemsPerPage: 5, currentPage: p}; index as i">
         
         <td>{{i+1}}</td>
         <td>{{expense.category}}</td>
         <td>{{expense.name}}</td>
         <td>{{expense.amount}}</td>
-        <td>{{expense.date}}</td>
+        <td>{{expense.date  | date: 'longDate'}}</td>
         <td><button (click)="del(expense.id)" class="btn btn-danger">Delete</button></td>
         <td><button routerLink="/home/manage-expenses/edit-expense/{{expense.id}}" 
         class="btn btn-primary">Edit</button>
@@ -36,6 +36,12 @@ class="table table-sm table-striped table-dark table-responsive-sm">
           Add-Expense</button>
         </td>
         
+      </tr>
+      <tr >
+        <td colspan="7" class="text-center bg-secondary">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+
+        </td>
       </tr>
     </tbody>
   </table>

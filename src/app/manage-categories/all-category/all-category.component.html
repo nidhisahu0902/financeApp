@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let category of items; let i=index;">
+      <tr *ngFor="let category of items | paginate: { itemsPerPage: 5, currentPage: p}; index as i">
   
         <td>{{i+1}}</td>
         <td>{{category.name}}</td>
@@ -29,10 +29,15 @@
         class="btn btn-secondary">Add-category</button></td>
         
       </tr>
+      <tr >
+        <td colspan="4" class="text-center bg-secondary">
+          <pagination-controls (pageChange)="p = $event"></pagination-controls> 
+
+        </td>
+      </tr>
     </tbody>
   </table>
-  <!-- <pagination-controls (pageChange)="p = $event"></pagination-controls> -->
-        </div>
+           </div>
         <div class="col-lg-3"></div>
     </div>
 </div>

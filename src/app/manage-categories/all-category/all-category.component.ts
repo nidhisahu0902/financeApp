@@ -8,7 +8,7 @@ import { CategoryService } from 'src/app/category.service';
 })
 export class AllCategoryComponent implements OnInit {
   items=[]
-  //p: number = 1;
+  p: number = 1;
   constructor(public categoryService:CategoryService) { }
 
   ngOnInit() {
