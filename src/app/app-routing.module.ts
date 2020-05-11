@@ -6,7 +6,7 @@ import { ResetPasswordComponent } from './auth/reset-password/reset-password.com
 import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
-import { ManageCategoriesComponent } from './home/manage-categories/manage-categories.component';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 import { ManageExpencesComponent } from './home/manage-expences/manage-expences.component';
 import { ExpenceSummaryComponent } from './home/expence-summary/expence-summary.component';
 import { AddCategoryComponent } from './manage-categories/add-category/add-category.component';

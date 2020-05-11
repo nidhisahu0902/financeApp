@@ -9,7 +9,7 @@
                     <i style="float:right; font-size:25px;" class="fa fa-window-close" aria-hidden="true"></i> 
                 </div>
                 <div style="background-color: rgb(141, 153, 129);"class="card-body">
-                    <h5 style="display:inline float:left;">category</h5>
+                    <h5 style="display:inline ;float:left;">category</h5>
                     <select style="width:70%;" [(ngModel)]="expense.category">
                         <option *ngFor="let category of categories;let i=index" value="{{category.name}}">
                                 {{category.name}}
@@ -22,7 +22,7 @@
                       <p>{{expense.name}}</p>
                     <br>
                     <i style="float:left; font-size:25px;" class="fa fa-inr" aria-hidden="true"></i>
-                    <input type="text" style="width:80%;"Placeholder="Spend Amount" 
+                    <input type="number" style="width:80%;"Placeholder="Spend Amount" 
                     [(ngModel)]="expense.amount"><br>
                       <p>{{expense.amount}}</p>
                     <br>

@@ -14,7 +14,7 @@ import { SigninComponent } from './auth/signin/signin.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ExpenceSummaryComponent } from './home/expence-summary/expence-summary.component';
-import { ManageCategoriesComponent } from './home/manage-categories/manage-categories.component';
+
 import { ManageExpencesComponent } from './home/manage-expences/manage-expences.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
@@ -31,6 +31,7 @@ import { environment } from '../environments/environment';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponent.component';
 import { AuthService } from './auth.service';
+import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
 
 
 @NgModule({
@@ -43,7 +44,6 @@ import { AuthService } from './auth.service';
     SignupComponent,
     DashboardComponent,
     ExpenceSummaryComponent,
-    ManageCategoriesComponent,
     ManageExpencesComponent,
     FooterComponent,
     NavbarComponent,
@@ -55,6 +55,7 @@ import { AuthService } from './auth.service';
     AllExpenseComponent,
     NavbarhomeComponent,
     NotfoundcomponentComponent,
+    ManageCategoriesComponent,
 
   ],
   imports: [

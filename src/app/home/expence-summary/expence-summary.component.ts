@@ -24,10 +24,7 @@ value
     console.log(res)
     this.categories=res
   })
-  this.expenseservice.getExpense().subscribe(res1=>{
-    console.log(res1)
-    this.Expense=res1
-  })
+
 }
   ngOnInit() {
     
@@ -39,13 +36,30 @@ add(data){
     this.sum=this.sum+this.value[j].amount
   }
 }
-  getExpense(){
-    return this.db1.collection("expenses",ref=>ref.where("uid","==",this.authser.getuid().where("this.categories.category.name","==",this.categoryservice.getCategory()))).snapshotChanges().pipe(
+  getExpense(category){
+    return this.db1.collection("expenses",ref=>ref.where("uid","==",this.authser.getuid()).where("category","==",category).orderBy("date","desc")).snapshotChanges().pipe(
       map(actions => actions.map(a => {
         const data = a.payload.doc.data() as any;
         const id = a.payload.doc.id;
         return { id, ...data };
       }))
-    );
+    ).subscribe(res1=>{
+      console.log(res1)
+      this.Expense=res1
+      this.sum=this.getSummary()
+    })
+}
+onSelectCat(event){
+  console.log("hello")
+  console.log(event.target.value)
+  this.getExpense(event.target.value)
+
+}
+getSummary(){
+  let sum =0;
+  this.Expense.forEach(element=>{ 
+    sum=sum+element.amount
+  })
+  return sum
 }
 }

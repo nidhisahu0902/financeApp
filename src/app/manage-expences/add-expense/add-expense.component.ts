@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/auth.service';
   styleUrls: ['./add-expense.component.css']
 })
 export class AddExpenseComponent implements OnInit {
-  expense:{category:string,name:string,amount:string,date:string}={category:"",name:"",amount:"",date:""}
+  expense:{category:string,name:string,amount:number,date:string}={category:"",name:"",amount:0,date:""}
   categories:any
   constructor(public db:AngularFirestore ,public ExpenseService:ExpenseService,public CategoryServise:CategoryService, public route:Router,public auth:AuthService) 
   { }
@@ -30,7 +30,7 @@ export class AddExpenseComponent implements OnInit {
       this.ExpenseService.addExpense(newEx)
       console.log(newEx)
       this.expense.name=""
-      this.expense.amount=""
+      this.expense.amount=0
       this.expense.date=""
       this.expense.category=""
       this.route.navigateByUrl("/home/manage-expenses")

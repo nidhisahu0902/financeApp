@@ -4,7 +4,7 @@
    
             <div class="form-group">
               <label for="exampleFormControlSelect1" style="font-weight: bolder;" class="text-white">Select Category</label>
-                  <select class="form-control bg-dark text-white" id="exampleFormControlSelect1">
+                  <select (change)="onSelectCat($event)" class="form-control bg-dark text-white" id="exampleFormControlSelect1">
                     <option *ngFor="let category of categories;" value="{{category.name}}">
                     {{category.name}}</option>
                   </select>

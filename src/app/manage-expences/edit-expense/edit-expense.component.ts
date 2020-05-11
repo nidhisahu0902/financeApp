@@ -30,7 +30,7 @@ export class EditExpenseComponent implements OnInit {
     let newEx={category:this.expense.category,name:this.expense.name,amount:this.expense.amount,date:this.expense.date}   
     this.ExpenseService.editEx(this.index,newEx)
     this.expense.name=""
-    this.expense.amount=""
+    this.expense.amount=0
     this.expense.date=""
     this.expense.category=""
     this.router.navigateByUrl("/home/manage-expenses")
