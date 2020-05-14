@@ -3,7 +3,7 @@
 <div class="sign-in-form">
     <img src="assets/images/signin.jpg" alt="no image">
     <h3>Just Sign In</h3>
-    <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)">
+    <form action="" method="" #userdata="ngForm" (ngSubmit)="onSubmit(userdata)" autocomplete="off">
         <div class="form-group">
           <input type="email" #emailRef="ngModel" required class="form-control" placeholder="Your Email"
           name="username" [(ngModel)]="email">
