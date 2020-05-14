@@ -8,6 +8,7 @@ import { ExpenseService } from 'src/app/expense.service';
 })
 export class AllExpenseComponent implements OnInit {
   items=[]
+  p:number=1;
   constructor(public ExpenseService:ExpenseService) { }
 
   ngOnInit() {

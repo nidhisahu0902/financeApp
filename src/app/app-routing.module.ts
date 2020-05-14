@@ -7,7 +7,6 @@ import { AuthComponent } from './auth/auth.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './home/dashboard/dashboard.component';
 import { ManageCategoriesComponent } from './manage-categories/manage-categories.component';
-import { ManageExpencesComponent } from './home/manage-expences/manage-expences.component';
 import { ExpenceSummaryComponent } from './home/expence-summary/expence-summary.component';
 import { AddCategoryComponent } from './manage-categories/add-category/add-category.component';
 import { EditCategoryComponent } from './manage-categories/edit-category/edit-category.component';
@@ -17,7 +16,7 @@ import { AddExpenseComponent } from './manage-expences/add-expense/add-expense.c
 import { EditExpenseComponent } from './manage-expences/edit-expense/edit-expense.component';
 import { NotfoundcomponentComponent } from './notfoundcomponent/notfoundcomponent.component';
 import { AuthGuardService } from './auth-guard.service';
-
+import { ManageExpencesComponent } from './manage-expences/manage-expences.component';
 
 const routes: Routes = [
 
@@ -30,12 +29,18 @@ const routes: Routes = [
       {path:'edit-category/:id',component:EditCategoryComponent}
 
     ]},
-    {path:'manage-expenses',component: ManageExpencesComponent, children: [
+    // {path:'manage-expenses',component: ManageExpencesComponent, children: [
+    //   {path:'',component:AllExpenseComponent},
+    //   {path:'add-expense',component:AddExpenseComponent},
+    //   {path:'edit-expense/:id1',component:EditExpenseComponent}
+    // ]},
+    {path:'manage-expenses',component:ManageExpencesComponent,children:[
       {path:'',component:AllExpenseComponent},
       {path:'add-expense',component:AddExpenseComponent},
       {path:'edit-expense/:id1',component:EditExpenseComponent}
     ]},
-    {path:'expense-summary',component: ExpenceSummaryComponent},
+    
+      {path:'expense-summary',component: ExpenceSummaryComponent},
 
   ]},
   {path:'auth' , component: AuthComponent, children : [

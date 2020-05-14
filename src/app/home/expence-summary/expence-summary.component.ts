@@ -14,7 +14,7 @@ export class ExpenceSummaryComponent implements OnInit {
 categories=[]
 Expense=[]
 sum=0
-
+p:number=1;
   constructor(public categoryservice:CategoryService,public expenseservice:ExpenseService,public db1:AngularFirestore
     ,public authser:AuthService) {
 
