@@ -47,4 +47,5 @@ export class CategoryService {
      //return this.categories[index]
      return this.db.collection("categories").doc(id).valueChanges()
    }
+
  }
