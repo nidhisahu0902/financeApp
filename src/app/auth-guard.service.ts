@@ -12,12 +12,15 @@ export class AuthGuardService implements CanActivate{
   canActivate(): boolean {
     if(this.auth.isLoggedin())
     {
- 
+      if(this.auth.isverifired())
+      {
         return true
+      }
+  
     }
     else
     {
-      console.log("true")
+      console.log("false")
       this.router.navigateByUrl("/auth")  
       return false
         

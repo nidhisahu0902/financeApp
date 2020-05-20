@@ -11,12 +11,14 @@ import { map } from 'rxjs/operators';
 export class AuthService  {
 uid=null
 user
+allgooglevalue:any
   constructor(public router:Router,public authdb:AngularFireAuth, public ngZone:NgZone,public db:AngularFirestore
   ) { 
     this.authdb.authState.subscribe(res=>{
       if(res)
       {
         this.uid=res.uid
+        this.allgooglevalue=res
         console.log(res)
         this.router.navigateByUrl("/home")
       }
@@ -117,6 +119,19 @@ isLoggedin()
   }
 }
 
+isverifired()
+{
+  if(this.allgooglevalue.emailVerified == true){
+    
+    return true
+  }
+  else
+  {
+    alert("Please Check Your Email Inbox and Verify it")
+    this.router.navigateByUrl("/auth")
+    return false
+  }
+}
 logout()
 {
   
