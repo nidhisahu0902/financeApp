@@ -4,7 +4,7 @@
     padding: 0;
     font-family: "consolas";
     box-sizing:border-box;
-
+    
 }
 body{
     display: flex;
@@ -34,6 +34,7 @@ a
     text-transform: uppercase;
     overflow: hidden;
     transition: 0.5s;
+    border-radius: 50%;
     letter-spacing: 4px;
   -webkit-box-reflect: below 1px linear-gradient(transparent,#0005)
 

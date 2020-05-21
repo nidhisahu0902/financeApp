@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AuthService } from 'src/app/auth.service';
 
 @Component({
   selector: 'app-reset-password',
@@ -11,17 +12,16 @@ import { AngularFireAuth } from '@angular/fire/auth';
   styleUrls: ['./reset-password.component.css']
 })
 export class ResetPasswordComponent implements OnInit {
-  email:any
-  constructor(public db:AngularFirestore,public afauth:AngularFireAuth) { }
+  mail
+  constructor(public db:AngularFirestore,public afauth:AngularFireAuth,public authservice:AuthService) { }
 
   ngOnInit() {
   }
   
-  onReset(formdata: NgForm)
+  onResetbutton(formdata : NgForm)
   {
-    console.log(formdata.value);
-    let data=formdata.value.email
-    this.afauth.auth.sendPasswordResetEmail(data)      
+     let udata=formdata.value.mail
+    this.authservice.resetpassword(udata)     
     formdata.resetForm();
   }
 }

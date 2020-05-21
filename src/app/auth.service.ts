@@ -28,6 +28,7 @@ allgooglevalue:any
  signIn(email,password)
 {
     
+  
    
   this.authdb.auth.signInWithEmailAndPassword(email,password).then(res=>{
     console.log(res.user.uid)
@@ -36,6 +37,16 @@ allgooglevalue:any
     alert("Login SuccessFull")
   }).catch(err=>{
     alert(err)
+  })
+}
+resetpassword(email)
+{
+  return this.authdb.auth.sendPasswordResetEmail(email).then((res)=>{
+    console.log("success",res);
+    window.alert("message sent successfully")
+  }).catch((err)=>{
+    window.alert(err.message)
+    console.log(err.message)
   })
 }
 
@@ -145,3 +156,5 @@ getuid()
 }
 
 }
+
+

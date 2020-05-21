@@ -3,7 +3,7 @@
     <div class="sign-up-form" style="height:450px;">
         <img src="assets/images/usericon.jpg" alt="no image">
       <strong> <h3>Sign Up Now</h3></strong>
-        <form action="" method="" #userdata1="ngForm" (ngSubmit)="onSubmit1(userdata1)" autocomplete="off">
+        <form #userdata1="ngForm" (ngSubmit)="onSubmit1(userdata1)" autocomplete="off">
             <div class="form-group">
                 <input type="text" #nameRef="ngModel" class="form-control" placeholder="Your Name" 
                 name="uname" [(ngModel)]="uname" required>
@@ -21,13 +21,13 @@
                         Please Enter Password
                     </div>
                 <input type="text" #numRef="ngModel" class="form-control" placeholder="Your Number"
-                name="number" [(ngModel)]="number">
+                name="number" [(ngModel)]="number" required>
                    <div [hidden]="numRef.valid || numRef.pristine" class="alert alert-danger ">
                          Please Enter Number
                    </div>
-                <p><span><input type="checkbox" ></span > I agree to the terms of services</p>
+                <p><span><input type="checkbox"></span > I agree to the terms of services</p>
             </div>        
-            <button type="submit" class="signup-btn">Sign Up</button>
+            <button type="submit" [disabled]="!userdata1.valid" class="signup-btn">Sign Up</button>
             <a routerLink="/auth" style="float:left;">Already have an Account ?</a><br>
             
         </form>

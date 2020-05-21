@@ -10,8 +10,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
 })
 export class SignupComponent
  implements OnInit {
- 
-  userdata:{uname:string,number:string,email:string,password:string}={uname:"",number:"",email:"",password:""}
+ uname
+ number
+ email
+ password
+ // userdata:{uname:string,number:string,email:string,password:string}={uname:"",number:"",email:"",password:""}
   constructor(public auth:AuthService,public database:AngularFirestore) { }
 
   ngOnInit() {
